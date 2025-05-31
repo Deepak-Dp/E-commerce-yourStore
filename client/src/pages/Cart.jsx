@@ -29,7 +29,7 @@ function Cart() {
       withCredentials: true,
     });
 
-    console.log(response.data.data);
+   
     dispatch(setCartProduct(response.data.data));
   };
 

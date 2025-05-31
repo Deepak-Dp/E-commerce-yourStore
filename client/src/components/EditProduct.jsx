@@ -17,7 +17,7 @@ const [productData, setProductData] = useState({
    
   });
 
-  console.log(productData);
+ 
   
 
   

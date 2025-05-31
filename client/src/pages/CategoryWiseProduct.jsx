@@ -13,7 +13,7 @@ function CategoryWiseProduct() {
     
   const products = useSelector((state) => state.product.allProduct);
  
-  console.log();
+  
   
   const filterCategoryProducts = products.filter((data) =>
     data.category[0]._id.toLowerCase().includes(categoryId)

@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { IoClose } from "react-icons/io5";
 
 function DeleteAdminProduct({ id, openConfirmBoxHandler,fatchAdminData }) {
-  console.log("removeProductId=>", id);
+  
 
   const deleteProductHandler =async ()=>{
 

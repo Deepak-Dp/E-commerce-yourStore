@@ -20,15 +20,14 @@ function ManageOrderDetailsAdmin() {
 
   const updateOrderStatus= async()=>{
    
-    console.log('STAtus',updateOrder);
-    console.log("id",orderId);
+   
      const response = await axios.put('http://localhost:5000/api/order/update-order-status',{
       orderId: orderId,
       orderStatus: updateOrder
     },{
       withCredentials: true
     })
-    console.log(response)
+    
 
     if(response.data.success){
       toast.success(response.data.message)

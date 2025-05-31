@@ -3,7 +3,7 @@ const userModel = require("../models/user.models");
 const cartProductModel = require("../models/cartProduct.models");
 const sendEmail = require("../config/sendEmail");
 const orderConfirmMail = require("../utils/orderConfirmmail");
-const Stripe = require("../config/stripe");
+
 require('dotenv').config()
 
 exports.cashOnDeliveryController = async (req, res) => {
@@ -157,73 +157,4 @@ exports.updateOrderStatusController = async (req, res) => {
     });
   }
 };
-
-exports.onLinePaymentController = async (req, res) =>{
-
-  try {
-
-    const userId = req.userId;
-    const { addressId, totalPrice, totalItemInCart, ProductDetails } = req.body;
-
-
-    const userDetails = await userModel.findOne({ _id: userId });
-
-
-    const line_items = ProductDetails.map (item=> {
-      return {
-          price_data : {
-            currency: 'inr',
-            product_data: {
-              name: item.productId.name,
-              image: item.productId.image[0],
-              quantity: item.quantity,
-              adminId: item.productId.userId,
-              price: item.productId.price,
-              metadata : {
-                  productId : item.productId._id
-              }
-            },
-
-            unit_amount :item.productId.price
-
-          },
-
-          adjustable_quantity : {
-            enabled : true,
-            minimum : 1
-          },
-
-          quantity : item.quantity
-      }
-    })
-
-    const params = {
-      submit_type : 'pay',
-      mode : 'payment',
-      payment_method_types: ['card'],
-    customer_email : userDetails.email,
-    metadata: {
-      userId: userId,
-      addressId : addressId,
-
-    },
-
-    line_items : line_items,
-    success_url: `${process.env.FRONTEND_URL}/success`,
-    cancel_url : `${process.env.FRONTEND_URL}/cancel`,
-
-    }
-
-    const session = await Stripe.checkout.sessions.create(params)
-
-   return res.status(303).json(session)
-    
-  } catch (error) {
-    return res.status(500).json({
-      message : error.message || error,
-      success : false
-    })
-    
-  }
-}
 

@@ -60,7 +60,7 @@ function CheckoutPage() {
     dispatch(setAddress(response?.data?.data));
   };
 
-  //console.log("env=>>>>>>",import.meta.env.VITE_PUBLISH_KEY);
+  
   
 
   const onsubmitHandler = async () => {
@@ -90,38 +90,7 @@ function CheckoutPage() {
     setWaitcashOnDelivery(false);
   };
 
-  const onlinePaymentHandler = async () => {
-   
-
-    try {
-
-      const stripePublicKey = import.meta.env.VITE_PUBLISH_KEY;
-
-      const stripePromiss = await loadStripe(stripePublicKey)
-
-      const response = await axios.post(
-        "http://localhost:5000/api/order/checkout",
-        {
-          addressId: address[selectedAddress]._id,
-          totalPrice: totalPrice,
-          totalItemInCart: totalItemInCart,
-          ProductDetails: cartProduct,
-        },
-        { withCredentials: true }
-
-
-      );
-
-      const {data: responseData } = response;
-
-      stripePromiss.redirectToCheckout({sessionId : responseData.id})
-
-    } catch (error) {
-
-      toast.error(error?.response?.data?.message);
-    
-    }
-  };
+ 
 
   useEffect(() => {
     colculateTotalPrice();
@@ -199,7 +168,7 @@ function CheckoutPage() {
           </div>
 
           <button
-            onClick={onlinePaymentHandler}
+            // onClick={onlinePaymentHandler}
             className="w-full py-2 mt-1 bg-green-600 rounded-sm hover:bg-green-900 text-white text-lg font-sans font-semibold"
           >
             Online Payment

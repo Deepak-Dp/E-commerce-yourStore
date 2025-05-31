@@ -15,7 +15,7 @@ function DeleteCartItem({ id, openConfirmBoxHandler }) {
        withCredentials: true
      })
  
-      console.log(response.data.data);
+    
       dispatch(setCartProduct(response.data.data))
       
      
@@ -24,7 +24,7 @@ function DeleteCartItem({ id, openConfirmBoxHandler }) {
    const deleteProductHandler =async ()=>{
 
     const response = await axios.delete(`http://localhost:5000/api/cart/delete-cart-item/${id}`)
-    console.log(response);
+   
     if (response?.data?.success) {
       toast.success(response.data.message);
       openConfirmBoxHandler();

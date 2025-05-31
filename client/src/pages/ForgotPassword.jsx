@@ -48,7 +48,7 @@ function ForgotPassword() {
     }
   };
 
-  console.log(loader);
+  
 
   return (
     <section className="h-full w-full flex items-center  justify-center mt-4 pb-4">

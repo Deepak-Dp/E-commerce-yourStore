@@ -43,7 +43,7 @@ function ResetPassword() {
       }
     );
 
-    console.log(response);
+    
 
     if (response?.data?.success) {
       toast.success(response?.data?.message);
@@ -53,7 +53,7 @@ function ResetPassword() {
     }
   };
 
-  console.log(data);
+ 
 
   return (
     <section className="h-full w-full flex items-center  justify-center mt-4 pb-4">

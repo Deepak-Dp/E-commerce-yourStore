@@ -22,8 +22,7 @@ function Order() {
   };
 
   const order = useSelector((state) => state.product.allOrder);
-  console.log("order", order);
-  console.log("orderDetails", orderDetails);
+  
 
   const redirectToOrderDetails = (data) => {
     navigate("/order-details", { state: data });
