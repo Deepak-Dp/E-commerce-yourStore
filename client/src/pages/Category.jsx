@@ -25,7 +25,7 @@ function Category() {
   const fatchAdminCategory = async () => {
     setLoading(true);
     const adminsCategory = await axios.get(
-      "http://localhost:5000/api/category/fatch-AdminCategoorys",
+      "https://yourstorebackend.vercel.app/api/category/fatch-AdminCategoorys",
       {
         withCredentials: true,
       }
@@ -47,7 +47,7 @@ function Category() {
   const removeCategoryHendler = async() =>{
   
 
-    const response = await axios.delete(`http://localhost:5000/api/category/remove-category/${_id}` )
+    const response = await axios.delete(`https://yourstorebackend.vercel.app/api/category/remove-category/${_id}` )
 
     
     

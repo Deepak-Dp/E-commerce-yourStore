@@ -36,7 +36,7 @@ function VerificationOtp() {
     e.preventDefault();
 
     const response = await axios.put(
-      "http://localhost:5000/api/user/verify-otp",
+      "https://yourstorebackend.vercel.app/api/user/verify-otp",
       data,
       {
         withCredentials: true,

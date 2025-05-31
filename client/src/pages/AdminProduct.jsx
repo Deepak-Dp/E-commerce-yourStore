@@ -30,7 +30,7 @@ function AdminProduct() {
   const fatchAdminData = async () => {
     setLoading(true);
     const response = await axios.get(
-      "http://localhost:5000/api/product/get-AdminProducts",
+      "https://yourstorebackend.vercel.app/api/product/get-AdminProducts",
       {
         withCredentials: true,
       }

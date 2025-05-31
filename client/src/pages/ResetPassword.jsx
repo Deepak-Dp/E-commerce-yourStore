@@ -36,7 +36,7 @@ function ResetPassword() {
     e.preventDefault();
 
     const response = await axios.put(
-      "http://localhost:5000/api/user/reset-Password",
+      "https://yourstorebackend.vercel.app/api/user/reset-Password",
       data,
       {
         withCredentials: true,

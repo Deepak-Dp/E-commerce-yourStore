@@ -25,7 +25,7 @@ function Cart() {
 
   const dispatch = useDispatch();
   const getCartItem = async () => {
-    const response = await axios.get("http://localhost:5000/api/cart/get", {
+    const response = await axios.get("https://yourstorebackend.vercel.app/api/cart/get", {
       withCredentials: true,
     });
 
@@ -35,7 +35,7 @@ function Cart() {
 
   const getAddress = async () => {
     const response = await axios.get(
-      "http://localhost:5000/api/address/get-address",
+      "https://yourstorebackend.vercel.app/api/address/get-address",
       { withCredentials: true }
     );
 
@@ -78,7 +78,7 @@ function Cart() {
   
    
     setLoading(true);
-    const response = await axios.put(`http://localhost:5000/api/cart/updata-cart-item/${id}`,{quantity},
+    const response = await axios.put(`https://yourstorebackend.vercel.app/api/cart/updata-cart-item/${id}`,{quantity},
       { withCredentials: true }
     );
     

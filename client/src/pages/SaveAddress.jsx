@@ -38,7 +38,7 @@ function SaveAddress() {
   }
 
   const getAddress =async ()=>{
-       const response = await axios.get("http://localhost:5000/api/address/get-address",{withCredentials:true})
+       const response = await axios.get("https://yourstorebackend.vercel.app/api/address/get-address",{withCredentials:true})
 
      
        dispatch(setAddress(response?.data?.data))
@@ -55,7 +55,7 @@ function SaveAddress() {
 
 try {
   
-  const response = await axios.delete(`http://localhost:5000/api/address/delete-address/${deleteAddressId}`,{withCredentials:true})
+  const response = await axios.delete(`https://yourstorebackend.vercel.app/api/address/delete-address/${deleteAddressId}`,{withCredentials:true})
  
   
   if(response?.data?.success){

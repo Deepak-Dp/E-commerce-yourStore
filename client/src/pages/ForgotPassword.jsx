@@ -29,7 +29,7 @@ function ForgotPassword() {
     e.preventDefault();
     setLoader(true);
     const response = await axios.put(
-      "http://localhost:5000/api/user/forgot-password",
+      "https://yourstorebackend.vercel.app/api/user/forgot-password",
       data,
       {
         withCredentials: true,

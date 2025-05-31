@@ -12,7 +12,7 @@ function ManageOrder() {
 
   const getAdminOrder = async () => {
     const response = await axios.get(
-      "http://localhost:5000/api/order/admin-order-list",
+      "https://yourstorebackend.vercel.app/api/order/admin-order-list",
       {
         withCredentials: true,
       }

@@ -44,7 +44,7 @@ function CheckoutPage() {
   };
 
   const getCartItem = async () => {
-    const response = await axios.get("http://localhost:5000/api/cart/get", {
+    const response = await axios.get("https://yourstorebackend.vercel.app/api/cart/get", {
       withCredentials: true,
     });
 
@@ -53,7 +53,7 @@ function CheckoutPage() {
 
   const getAddress = async () => {
     const response = await axios.get(
-      "http://localhost:5000/api/address/get-address",
+      "https://yourstorebackend.vercel.app/api/address/get-address",
       { withCredentials: true }
     );
 
@@ -69,7 +69,7 @@ function CheckoutPage() {
     }
     setWaitcashOnDelivery(true);
     const response = await axios.post(
-      "http://localhost:5000/api/order/cash-on-delivery",
+      "https://yourstorebackend.vercel.app/api/order/cash-on-delivery",
       {
         addressId: address[selectedAddress]._id,
         totalPrice: totalPrice,

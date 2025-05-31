@@ -31,7 +31,7 @@ function AddAddress({ openHandler ,getAddress}) {
    setLoading(true)
 
     const response = await axios.post(
-        "http://localhost:5000/api/address/add-Address",
+        "https://yourstorebackend.vercel.app/api/address/add-Address",
         data,
         {
           withCredentials: true,

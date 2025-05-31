@@ -27,7 +27,7 @@ function Profile() {
     formData.append("avatar", avatar);
     setWait(true);
     const response = await axios.put(
-      "http://localhost:5000/api/user/upload-avatar",
+      "https://yourstorebackend.vercel.app/api/user/upload-avatar",
       formData,
       {
         withCredentials: true,
@@ -65,7 +65,7 @@ function Profile() {
   const submitUpdateUser = async(e) =>{
     e.preventDefault()
    setLoading(true)
-    const response = await axios.put("http://localhost:5000/api/user/updateUserDetails",data,{
+    const response = await axios.put("https://yourstorebackend.vercel.app/api/user/updateUserDetails",data,{
         withCredentials: true
     })
 
@@ -73,7 +73,7 @@ function Profile() {
    
     toast.success(response?.data?.message)
     
-      const res = await axios.get('http://localhost:5000/api/user/get-user',{
+      const res = await axios.get('https://yourstorebackend.vercel.app/api/user/get-user',{
         withCredentials: true
       })
     dispatch(getUserdetails(res?.data?.data))

@@ -12,7 +12,7 @@ function Order() {
 
   const getUserOrder = async () => {
     const response = await axios.get(
-      "http://localhost:5000/api/order/order-list",
+      "https://yourstorebackend.vercel.app/api/order/order-list",
       {
         withCredentials: true,
       }

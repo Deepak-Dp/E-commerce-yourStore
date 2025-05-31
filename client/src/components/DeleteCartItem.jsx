@@ -11,7 +11,7 @@ function DeleteCartItem({ id, openConfirmBoxHandler }) {
 
   const dispatch = useDispatch()
   const getCartItem = async ()=>{
-    const  response = await axios.get("http://localhost:5000/api/cart/get",{
+    const  response = await axios.get("https://yourstorebackend.vercel.app/api/cart/get",{
        withCredentials: true
      })
  
@@ -23,7 +23,7 @@ function DeleteCartItem({ id, openConfirmBoxHandler }) {
 
    const deleteProductHandler =async ()=>{
 
-    const response = await axios.delete(`http://localhost:5000/api/cart/delete-cart-item/${id}`)
+    const response = await axios.delete(`https://yourstorebackend.vercel.app/api/cart/delete-cart-item/${id}`)
    
     if (response?.data?.success) {
       toast.success(response.data.message);

@@ -12,7 +12,7 @@ export const registerUser = createAsyncThunk(
     "auth/register",
     async (data) => {
         
-            const response = await axios.post("http://localhost:5000/api/user/register", data,{
+            const response = await axios.post("https://yourstorebackend.vercel.app/api/user/register", data,{
                 withCredentials: true
             });
             return response.data;
@@ -25,7 +25,7 @@ export const loginUser = createAsyncThunk(
     'user/login',
 
     async (data)=>{
-        const response = await axios.post("http://localhost:5000/api/user/login", data,{
+        const response = await axios.post("https://yourstorebackend.vercel.app/api/user/login", data,{
             withCredentials: true
         });
         return response.data;
@@ -35,7 +35,7 @@ export const loginUser = createAsyncThunk(
 export const logoutUser = createAsyncThunk(
     'user/logout',
     async ()=>{
-        const response = await axios.get("http://localhost:5000/api/user/logout",{
+        const response = await axios.get("https://yourstorebackend.vercel.app/api/user/logout",{
             withCredentials: true
         });
         return response.data;

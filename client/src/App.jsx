@@ -13,7 +13,7 @@ function App() {
 
   const dispatch = useDispatch()
    const getUserHandler= async()=>{
-    const response = await axios.get('http://localhost:5000/api/user/get-user',{
+    const response = await axios.get('https://yourstorebackend.vercel.app/api/user/get-user',{
       withCredentials: true
     })
   dispatch(getUserdetails(response?.data?.data))
@@ -24,7 +24,7 @@ function App() {
    const fatchAdminCategory = async () => {
     
     const adminsCategory = await axios.get(
-      "http://localhost:5000/api/category/fatch-AdminCategoorys",
+      "https://yourstorebackend.vercel.app/api/category/fatch-AdminCategoorys",
       {
         withCredentials: true,
       }
@@ -37,7 +37,7 @@ function App() {
   };
 
   const getUserOrder= async()=>{
-    const response = await axios.get('http://localhost:5000/api/order/order-list',{
+    const response = await axios.get('https://yourstorebackend.vercel.app/api/order/order-list',{
       withCredentials: true
     })
   
@@ -47,7 +47,7 @@ function App() {
   }
 
   const getAdminOrder= async()=>{
-    const response = await axios.get('http://localhost:5000/api/order/admin-order-list',{
+    const response = await axios.get('https://yourstorebackend.vercel.app/api/order/admin-order-list',{
       withCredentials: true
     })
   
@@ -56,7 +56,7 @@ function App() {
   }
 
   const getCartItem = async ()=>{
-    const  response = await axios.get("http://localhost:5000/api/cart/get",{
+    const  response = await axios.get("https://yourstorebackend.vercel.app/api/cart/get",{
        withCredentials: true
      })
  
@@ -68,7 +68,7 @@ function App() {
 
 
   const fatchAllProduct = async ()=>{
-    const response = await axios.get('http://localhost:5000/api/product/get',{
+    const response = await axios.get('https://yourstorebackend.vercel.app/api/product/get',{
       withCredentials:true
     })
 
@@ -79,7 +79,7 @@ function App() {
   }
 
   const getAddress =async ()=>{
-         const response = await axios.get("http://localhost:5000/api/address/get-address",{withCredentials:true})
+         const response = await axios.get("https://yourstorebackend.vercel.app/api/address/get-address",{withCredentials:true})
   
         
          dispatch(setAddress(response?.data?.data))

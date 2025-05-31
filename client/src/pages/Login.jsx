@@ -44,7 +44,7 @@ function Login() {
         localStorage.setItem('accessToken', data.payload.data.accessToken)
         localStorage.setItem('refreshToken', data.payload.data.refreshToken)
         
-        const response = await axios.get('http://localhost:5000/api/user/get-user',{
+        const response = await axios.get('https://yourstorebackend.vercel.app/api/user/get-user',{
           withCredentials: true
         })
       dispatch(getUserdetails(response?.data?.data))

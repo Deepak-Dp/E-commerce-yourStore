@@ -8,7 +8,7 @@ function DeleteAdminProduct({ id, openConfirmBoxHandler,fatchAdminData }) {
 
   const deleteProductHandler =async ()=>{
 
-    const response = await axios.delete(`http://localhost:5000/api/product/delete-Product/${id}`)
+    const response = await axios.delete(`https://yourstorebackend.vercel.app/api/product/delete-Product/${id}`)
 
     if(response?.data?.success){
         toast.success(response.data.message)

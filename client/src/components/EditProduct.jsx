@@ -38,7 +38,7 @@ const [productData, setProductData] = useState({
   const onSubmitHandler =async (e)=>{
     e.preventDefault()
 
-    const response = await axios.put("http://localhost:5000/api/product/update-product",productData,{
+    const response = await axios.put("https://yourstorebackend.vercel.app/api/product/update-product",productData,{
         withCredentials: true,
     })
 

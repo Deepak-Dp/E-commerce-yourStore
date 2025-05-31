@@ -7,7 +7,7 @@ const uploadImage = async (image) =>{
       formData.append("file", image);
       
       const response = await axios.post(
-        "http://localhost:5000/api/file/upload",
+        "https://yourstorebackend.vercel.app/api/file/upload",
         formData,
         {
           withCredentials: true,

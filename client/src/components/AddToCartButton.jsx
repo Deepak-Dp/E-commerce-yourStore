@@ -14,7 +14,7 @@ function AddToCartButton({data}) {
     const dispatch = useDispatch()
     
   const getCartItem = async ()=>{
-    const  response = await axios.get("http://localhost:5000/api/cart/get",{
+    const  response = await axios.get("https://yourstorebackend.vercel.app/api/cart/get",{
        withCredentials: true
      })
  
@@ -55,7 +55,7 @@ function AddToCartButton({data}) {
     try {
       setWait(true);
       const response = await axios.post(
-        "http://localhost:5000/api/cart/add",
+        "https://yourstorebackend.vercel.app/api/cart/add",
         { productId: data._id },
         {
           withCredentials: true,

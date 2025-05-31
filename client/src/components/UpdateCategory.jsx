@@ -52,7 +52,7 @@ function UploadCategory({ setOpen, open,fatchAdminCategory }) {
     e.preventDefault();
     setLoading(true);
     const response = await axios.post(
-      "http://localhost:5000/api/category/add",
+      "https://yourstorebackend.vercel.app/api/category/add",
       data,
       {
         withCredentials: true,

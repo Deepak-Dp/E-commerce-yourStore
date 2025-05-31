@@ -16,7 +16,7 @@ function OrderDetailsPage() {
   }
 
  const cancelOrderHandler= async()=>{
-  const response = await axios.put('http://localhost:5000/api/order/update-order-status',{
+  const response = await axios.put('https://yourstorebackend.vercel.app/api/order/update-order-status',{
     orderId: orderId,
     orderStatus: cancelOrder
   },{

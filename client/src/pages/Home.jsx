@@ -25,7 +25,7 @@ function Home() {
   };
 
   const getCartItem = async () => {
-    const response = await axios.get("http://localhost:5000/api/cart/get", {
+    const response = await axios.get("https://yourstorebackend.vercel.app/api/cart/get", {
       withCredentials: true,
     });
 
@@ -34,7 +34,7 @@ function Home() {
   };
 
   const fatchAllProduct = async () => {
-    const response = await axios.get("http://localhost:5000/api/product/get", {
+    const response = await axios.get("https://yourstorebackend.vercel.app/alhost:5000/api/product/get", {
       withCredentials: true,
     });
 
@@ -43,7 +43,7 @@ function Home() {
 
   const fatchcategory = async () => {
     setLoading(true);
-    const response = await axios.get("http://localhost:5000/api/category/get", {
+    const response = await axios.get("https://yourstorebackend.vercel.app/api/category/get", {
       withCredentials: true,
     });
 

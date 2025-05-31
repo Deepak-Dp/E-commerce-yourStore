@@ -35,7 +35,7 @@ function UpdateAddress({openHandler,updatedData,getAddress}) {
         e.preventDefault();
        
           setLoading(true)
-        const response = await axios.put("http://localhost:5000/api/address/update-address",
+        const response = await axios.put("https://yourstorebackend.vercel.app/api/address/update-address",
             data,
             {
               withCredentials: true,
