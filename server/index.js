@@ -22,7 +22,7 @@ require('dotenv').config()
 const app = express()
 app.use(cors({
     credentials: true,
-    origin : process.env.FRONTEND_URL
+    origin : 'https://e-commerce-your-store.vercel.app'
 }))
 DBConnect()
 app.use(express.json())
